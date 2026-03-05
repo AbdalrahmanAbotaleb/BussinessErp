@@ -73,7 +73,7 @@ A modern, intelligent Enterprise Resource Planning (ERP) system built with **.NE
 ### 🛠 System Tools & Security
 | Database Backup | UI Visibility Controls |
 | :---: | :---: |
-| ![Backup](ScreenShots/BackupDB.PNG) | ![Icons](ScreenShots/visibleIcon.PNG) / ![Icons](ScreenShots/unvisibleIcon.PNG) |
+| ![Backup](ScreenShots/BackupDB.PNG) | ![Icons](ScreenShots/visibleIcon.PNG)  |
 
 ---
 
