@@ -52,7 +52,7 @@ This is not just a standard ERP; it is a **Decision Support System** that levera
 ---
 
 ## 👤 Author
-**Your Name Here**
+**Abdalrahman Abotaleb**
 - [LinkedIn Profile Link]
 - [abdalrahmanabotaleb362@gmail.com]
 
