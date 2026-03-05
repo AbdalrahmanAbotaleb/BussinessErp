@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Architecture & ERD — AI Business Brain</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #0d9488;
+            --accent-light: #f0fdfa;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --card-bg: #ffffff;
+            --tag-bg: #f1f5f9;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background: #f8fafc;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .page {
+            background: white;
+            width: 210mm;
+            min-height: 296.5mm;
+            margin: 0 auto;
+            padding: 20mm;
+            box-sizing: border-box;
+            position: relative;
+            page-break-after: always;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .page:last-child {
+            page-break-after: avoid;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .doc-type {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            margin: 40px 0 20px 0;
+        }
+
+        /* ----- ERD Visualization ----- */
+        .erd-container {
+            background: var(--primary);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 30px 0;
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            line-height: 1.2;
+            overflow-x: auto;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ----- Table Cards ----- */
+        .schema-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .table-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--card-bg);
+            margin-bottom: 20px;
+        }
+
+        .table-header {
+            background: var(--tag-bg);
+            padding: 10px 15px;
+            font-weight: 700;
+            color: var(--primary);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .table-body {
+            padding: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            border-bottom: 1px dotted var(--border);
+        }
+
+        .col-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .col-type {
+            color: #e11d48;
+            font-family: 'JetBrains Mono';
+            font-size: 0.8rem;
+        }
+
+        .col-key {
+            color: #f59e0b;
+            font-weight: 700;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .no-print {
+            position: absolute;
+            top: 20px;
+            right: -100px;
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+        <header>
+            <div class="logo">AI Business <span>Brain</span></div>
+            <div class="doc-type">Database ERD Documentation</div>
+        </header>
+
+        <h1>Entity-Relationship Diagram</h1>
+        <p>The system utilizes a highly normalized relational schema designed for transactional integrity and analytical
+            performance. Below is the logical representation of the enterprise data model.</p>
+
+        <div class="erd-container">
+            <!-- TEXT-BASED ERD REPRESENTATION -->
+            [ Customers ] [ Suppliers ] [ Employees ] [ Users ]
+            | | | |
+            | 1 | 1 | (Staff) | (Auth)
+            | | | |
+            | N | N +--------------------+
+            [ Sales ] <---------- [ Purchases ] | 1 | 1 | | | N | N [ SaleItems ] [ PurchaseItems ] | | | N | N
+                +---------( 1 )------+ | [ Products ] <--- (Central Inventory Hub) | [ Expenses ] (Independent Ledger)
+                </div>
+
+                <h2>System Relational Model</h2>
+                <p>Entities are interconnected through standardized Primary and Foreign Key relationships. The
+                    <strong>Products</strong> table acts as the central hub, linking both revenue (Sales) and capital
+                    expenditure (Purchases).</p>
+
+                <div class="schema-grid">
+                    <!-- USERS -->
+                    <div class="table-card">
+                        <div class="table-header"><span>Users</span> <span class="col-key">🔑 PK</span></div>
+                        <div class="table-body">
+                            <table>
+                                <tr>
+                                    <td class="col-name">Id</td>
+                                    <td class="col-type">INT [PK]</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-name">Username</td>
+                                    <td class="col-type">NVARCHAR(100)</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-name">PasswordHash</td>
+                                    <td class="col-type">NVARCHAR(256)</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-name">Role</td>
+                                    <td class="col-type">NVARCHAR(50)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- EMPLOYEES -->
+                    <div class="table-card">
+                        <div class="table-header"><span>Employees</span> <span class="col-key">🔑 PK</span></div>
+                        <div class="table-body">
+                            <table>
+                                <tr>
+                                    <td class="col-name">Id</td>
+                                    <td class="col-type">INT [PK]</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-name">Name</td>
+                                    <td class="col-type">NVARCHAR(150)</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-name">Salary</td>
+                                    <td class="col-type">DECIMAL(18,2)</td>
+                                </tr>
+                                <tr>
+                                    <td class="col-name">Department</td>
+                                    <td class="col-type">NVARCHAR(100)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="page">
+            <h2>Core Business Schema</h2>
+
+            <div class="schema-grid">
+                <!-- PRODUCTS -->
+                <div class="table-card">
+                    <div class="table-header"><span>Products</span> <span class="col-key">🔑 PK</span></div>
+                    <div class="table-body">
+                        <table>
+                            <tr>
+                                <td class="col-name">Id</td>
+                                <td class="col-type">INT [PK]</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">Name</td>
+                                <td class="col-type">NVARCHAR(200)</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">CostPrice</td>
+                                <td class="col-type">DECIMAL(18,2)</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">SellPrice</td>
+                                <td class="col-type">DECIMAL(18,2)</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">Quantity</td>
+                                <td class="col-type">INT</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- CUSTOMERS -->
+                <div class="table-card">
+                    <div class="table-header"><span>Customers</span> <span class="col-key">🔑 PK</span></div>
+                    <div class="table-body">
+                        <table>
+                            <tr>
+                                <td class="col-name">Id</td>
+                                <td class="col-type">INT [PK]</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">Name</td>
+                                <td class="col-type">NVARCHAR(150)</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">Phone</td>
+                                <td class="col-type">NVARCHAR(20)</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">Email</td>
+                                <td class="col-type">NVARCHAR(150)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- SALES -->
+                <div class="table-card">
+                    <div class="table-header"><span>Sales</span> <span class="col-key">🔑 PK</span></div>
+                    <div class="table-body">
+                        <table>
+                            <tr>
+                                <td class="col-name">Id</td>
+                                <td class="col-type">INT [PK]</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">CustomerId</td>
+                                <td class="col-type">INT [FK]</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">Date</td>
+                                <td class="col-type">DATETIME</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">TotalAmount</td>
+                                <td class="col-type">DECIMAL(18,2)</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- SALE ITEMS -->
+                <div class="table-card">
+                    <div class="table-header"><span>SaleItems</span> <span class="col-key">🔑 PK</span></div>
+                    <div class="table-body">
+                        <table>
+                            <tr>
+                                <td class="col-name">Id</td>
+                                <td class="col-type">INT [PK]</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">SaleId</td>
+                                <td class="col-type">INT [FK]</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">ProductId</td>
+                                <td class="col-type">INT [FK]</td>
+                            </tr>
+                            <tr>
+                                <td class="col-name">Quantity</td>
+                                <td class="col-type">INT</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Operational Logic</h2>
+            <p><strong>Atomic Integrity:</strong> All Sales and Purchases are wrapped in T-SQL Transactions. This
+                ensures that the Inventory (Products) count is decremented or incremented only when the parent record is
+                successfully committed.</p>
+            <p><strong>Cascading Deletes:</strong> Relation between Headers (Sales/Purchases) and Line Items
+                (SaleItems/PurchaseItems) is maintained via <code>ON DELETE CASCADE</code>, ensuring no orphaned data
+                remains in the system.</p>
+
+            <div class="footer">
+                &copy; 2026 AI Business Brain • Database Architecture Report • Page 2
+            </div>
+        </div>
+
+</body>
+
+</html>
