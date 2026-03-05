@@ -4,73 +4,107 @@ A modern, intelligent Enterprise Resource Planning (ERP) system built with **.NE
 
 ---
 
-## 📸 Project Showcase
+## 📸 Comprehensive Project Gallery
 
-### 📊 Main Dashboard
-![Main Dashboard](ScreenShots/DashBoardMain.PNG)
-*High-performance dashboard with real-time business KPIs.*
+### 🏠 Main Dashboard & Entry
+| Splash Screen | Authentication | Main Dashboard |
+| :---: | :---: | :---: |
+| ![Splash](ScreenShots/splash_screen_preview.png) | ![Auth](ScreenShots/AuthPage.PNG) | ![Dashboard](ScreenShots/DashBoardMain.PNG) |
 
-### 🧠 AI & Intelligent Insights
-| AI Analysis Engine | Intelligent Business Chat |
+---
+
+### 🧠 AI Engineering & Intelligent Insights (Key Features)
+*The core of this system is the AI Analysis Engine and the Gemini-powered Advisor.*
+
+| AI Analysis Engine | Intelligent Business Chat | AI Brain Logic |
+| :---: | :---: | :---: |
+| ![AI Analysis](ScreenShots/AI%20Analysis.PNG) | ![AI Chat](ScreenShots/AIChat.PNG) | ![AI Brain](ScreenShots/AI%20Brain.PNG) |
+
+| Top Customer AI Analysis | Top Supplier Analysis |
 | :---: | :---: |
-| ![AI Analysis](ScreenShots/AI%20Analysis.PNG) | ![AI Chat](ScreenShots/AIChat.PNG) |
-| *Predictive Trends & ML Analysis* | *Gemini-powered Business Advisor* |
+| ![Top Customer](ScreenShots/TopCustomerAI.PNG) | ![Top Supplier](ScreenShots/TopSupplier.PNG) |
 
 ---
 
-## 🌟 Key Highlights
+### 💼 Core Management Modules
+*Efficient management of business entities with localized (RTL) interfaces.*
 
-This is not just a standard ERP; it is a **Decision Support System** that leverages:
-- 🧠 **Generative AI (Google Gemini)**: Natural language business advisor.
-- 🔮 **Machine Learning (ML.NET)**: Automated sales forecasting and stock-out predictions.
-- ⚡ **High Performance**: Optimized with asynchronous and parallel processing.
+| Products Management | Customers Management | Suppliers Management |
+| :---: | :---: | :---: |
+| ![Products](ScreenShots/ProductsPage.PNG) | ![Customers](ScreenShots/customerPage.PNG) | ![Suppliers](ScreenShots/SupplierPage.PNG) |
 
----
-
-## 🛠 Features
-
-### 1. 🤖 AI & Machine Learning Suite
-- **Predictive Sales Forecasting**: Uses **ML.NET** to analyze historical sales data and predict future trends.
-- **Dynamic Business Advisor**: Integrated with **Google Gemini AI** to answer complex business questions.
-- **Smart Stock-Out Alerts**: Automatically predicts when products will run out of stock.
-![AI Brain](ScreenShots/AI%20Brain.PNG)
-
-### 2. 💼 Core Business Modules
-- **Inventory & Products**: Track stock levels and profit margins.
-![Products](ScreenShots/ProductsPage.PNG)
-- **Sales & Purchases**: Manage invoices and supplier relationships.
-![Sales](ScreenShots/SalesPage.PNG)
-- **Financial Analytics**: Comprehensive financial reporting and net profit tracking.
-
-### 3. 🌍 Localization & UX
-- **Full Arabic (RTL) Support**: Tailored UI for Middle Eastern business environments.
-- **Onboarding Experience**: Guidance for new users to get started quickly.
-![Onboarding](ScreenShots/onboarding_ai_brain.png)
+| Employees Management | Users & Permissions | Expenses Tracking |
+| :---: | :---: | :---: |
+| ![Employees](ScreenShots/EmpolyeesPage.PNG) | ![Users](ScreenShots/UsersPages.PNG) | ![Expenses](ScreenShots/ExpensesPage.PNG) |
 
 ---
 
-## 🏗 Technical Architecture
+### 🛒 Sales, Purchases & Invoicing
+*Full transaction lifecycle management with automated invoicing.*
 
-- **Platform**: .NET WinForms (C#)
-- **AI/ML**: ML.NET (Time Series), Google Gemini API
-- **Architecture**: N-Tier Architecture (BLL, DAL, UI).
-- **Optimization**: Implemented `Task.WhenAll` for parallel data fetching.
-- **Database**: SQL Server.
+| Sales Module | Purchases Module | Invoice Preview |
+| :---: | :---: | :---: |
+| ![Sales](ScreenShots/SalesPage.PNG) | ![Purchases](ScreenShots/PurchesPage.PNG) | ![Print Invoice](ScreenShots/printInvoice.PNG) |
+
+| Long Invoice Format | Invoice Action Controls |
+| :---: | :---: |
+| ![Long Invoice](ScreenShots/longInvoice.PNG) | ![Invoice Btn](ScreenShots/invoicebtn.PNG) |
+
+---
+
+### 📊 Financials & Reporting
+*Deep financial insights and detailed business reporting.*
+
+| Financial Overview | Detailed Financial Report |
+| :---: | :---: |
+| ![Financial Page](ScreenShots/fincialPage.PNG) | ![Financial Report](ScreenShots/fincialReport.PNG) |
+
+---
+
+### 🎓 Guided Onboarding Experience
+*Helping users master the system quickly.*
+
+| AI Brain Onboarding | Inventory Onboarding | Sales Onboarding | Reporting Onboarding |
+| :---: | :---: | :---: | :---: |
+| ![Onboarding 1](ScreenShots/onboarding_ai_brain.png) | ![Onboarding 2](ScreenShots/onboarding_inventory.png) | ![Onboarding 3](ScreenShots/onboarding_sales.png) | ![Onboarding 4](ScreenShots/onboarding_reporting.png) |
+
+---
+
+### 🛠 System Tools & Security
+| Database Backup | UI Visibility Controls |
+| :---: | :---: |
+| ![Backup](ScreenShots/BackupDB.PNG) | ![Icons](ScreenShots/visibleIcon.PNG) / ![Icons](ScreenShots/unvisibleIcon.PNG) |
+
+---
+
+## 🌟 Technical Highlights
+
+- **🧠 Generative AI**: Integrated with **Google Gemini (gemini-2.5-flash)** for conversational business intelligence.
+- **🔮 Predictive ML**: Built-in **ML.NET** forecasting engine for automated sales trends.
+- **⚡ High Performance**: Optimized with **Asynchronous Programming** and Parallel Task execution (`Task.WhenAll`).
+- **🏗 Robust Architecture**: N-Tier Design (Presentation, Business Logic, and Data Access layers).
+- **🌍 Arabic RTL Support**: Fully localized UI for the Middle Eastern market.
+
+---
+
+## 🛠 Tech Stack
+- **Language**: C# (.NET Framework)
+- **Database**: SQL Server
+- **AI/ML**: ML.NET, Google Gemini API
+- **UI Architecture**: WinForms with custom Modern UI controls.
 
 ---
 
 ## 🚀 How to Run
-
 1. Clone the repository.
-2. Open the solution in **Visual Studio 2022**.
-3. Update the `GeminiApiKey` in [App.config](cci:7://file:///g:/zip%20%20visual%20studio%20project/BussinessErp/BussinessErp/App.config:0:0-0:0) with your Key.
-4. Run the `DatabaseSetup.sql` script in your SQL Server.
-5. Build and Run!
+2. Open in **Visual Studio 2022**.
+3. Set up your SQL Server and run [SQL/DatabaseSetup.sql](cci:7://file:///g:/zip%20%20visual%20studio%20project/BussinessErp/BussinessErp/SQL/DatabaseSetup.sql:0:0-0:0).
+4. Add your Gemini API Key in [App.config](cci:7://file:///g:/zip%20%20visual%20studio%20project/BussinessErp/BussinessErp/App.config:0:0-0:0).
+5. Build and Run.
 
 ---
 
-## 👤 Abdalrahman Abotaleb
+## 👤 Author
 **Abdalrahman Abotaleb**
-- [Abdalrahman Abotaleb]
 
 ---
