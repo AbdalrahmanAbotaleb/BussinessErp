@@ -71,6 +71,6 @@ This is not just a standard ERP; it is a **Decision Support System** that levera
 
 ## 👤 Abdalrahman Abotaleb
 **Abdalrahman Abotaleb**
-- [Your Professional Email]
+- [Abdalrahman Abotaleb]
 
 ---
