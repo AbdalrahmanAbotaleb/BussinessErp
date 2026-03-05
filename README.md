@@ -4,6 +4,20 @@ A modern, intelligent Enterprise Resource Planning (ERP) system built with **.NE
 
 ---
 
+## 📸 Project Showcase
+
+### 📊 Main Dashboard
+![Main Dashboard](ScreenShots/DashBoardMain.PNG)
+*High-performance dashboard with real-time business KPIs.*
+
+### 🧠 AI & Intelligent Insights
+| AI Analysis Engine | Intelligent Business Chat |
+| :---: | :---: |
+| ![AI Analysis](ScreenShots/AI%20Analysis.PNG) | ![AI Chat](ScreenShots/AIChat.PNG) |
+| *Predictive Trends & ML Analysis* | *Gemini-powered Business Advisor* |
+
+---
+
 ## 🌟 Key Highlights
 
 This is not just a standard ERP; it is a **Decision Support System** that leverages:
@@ -16,18 +30,22 @@ This is not just a standard ERP; it is a **Decision Support System** that levera
 ## 🛠 Features
 
 ### 1. 🤖 AI & Machine Learning Suite
-- **Predictive Sales Forecasting**: Uses **ML.NET (SSA Algorithm)** to analyze historical sales data and predict future trends with 95% confidence intervals.
-- **Dynamic Business Advisor**: Integrated with **Google Gemini AI** to answer complex business questions (e.g., "Which products should I discount to increase cash flow?").
-- **Smart Stock-Out Alerts**: Automatically predicts when products will run out of stock based on sales velocity.
+- **Predictive Sales Forecasting**: Uses **ML.NET** to analyze historical sales data and predict future trends.
+- **Dynamic Business Advisor**: Integrated with **Google Gemini AI** to answer complex business questions.
+- **Smart Stock-Out Alerts**: Automatically predicts when products will run out of stock.
+![AI Brain](ScreenShots/AI%20Brain.PNG)
 
 ### 2. 💼 Core Business Modules
-- **Inventory Management**: Track stock levels, fast vs. slow-moving items, and profit margins.
-- **Sales & Purchases**: Full cycle of invoices, supplier management, and customer tracking.
-- **Financial Analytics**: Real-time dashboards showing revenue, expenses, and net profit.
+- **Inventory & Products**: Track stock levels and profit margins.
+![Products](ScreenShots/ProductsPage.PNG)
+- **Sales & Purchases**: Manage invoices and supplier relationships.
+![Sales](ScreenShots/SalesPage.PNG)
+- **Financial Analytics**: Comprehensive financial reporting and net profit tracking.
 
 ### 3. 🌍 Localization & UX
 - **Full Arabic (RTL) Support**: Tailored UI for Middle Eastern business environments.
-- **Modern Dashboard**: Visually rich interface with real-time KPIs and interactive suggestions.
+- **Onboarding Experience**: Guidance for new users to get started quickly.
+![Onboarding](ScreenShots/onboarding_ai_brain.png)
 
 ---
 
@@ -35,9 +53,9 @@ This is not just a standard ERP; it is a **Decision Support System** that levera
 
 - **Platform**: .NET WinForms (C#)
 - **AI/ML**: ML.NET (Time Series), Google Gemini API
-- **Architecture**: N-Tier Architecture (BLL, DAL, UI) for clean separation of concerns.
-- **Optimization**: Implemented `Task.WhenAll` for parallel data fetching in complex dashboards.
-- **Database**: SQL Server (Optimized queries & Stored Procedures).
+- **Architecture**: N-Tier Architecture (BLL, DAL, UI).
+- **Optimization**: Implemented `Task.WhenAll` for parallel data fetching.
+- **Database**: SQL Server.
 
 ---
 
@@ -45,16 +63,14 @@ This is not just a standard ERP; it is a **Decision Support System** that levera
 
 1. Clone the repository.
 2. Open the solution in **Visual Studio 2022**.
-3. Update the `GeminiApiKey` in [App.config](cci:7://file:///g:/zip%20%20visual%20studio%20project/BussinessErp/BussinessErp/App.config:0:0-0:0) with your Google Gemini API Key.
+3. Update the `GeminiApiKey` in [App.config](cci:7://file:///g:/zip%20%20visual%20studio%20project/BussinessErp/BussinessErp/App.config:0:0-0:0) with your Key.
 4. Run the `DatabaseSetup.sql` script in your SQL Server.
 5. Build and Run!
 
 ---
 
-## 👤 Author
+## 👤 Abdalrahman Abotaleb
 **Abdalrahman Abotaleb**
-- [LinkedIn Profile Link]
-- [abdalrahmanabotaleb362@gmail.com]
+- [Your Professional Email]
 
 ---
-*Developed with ❤️ as an AI-Integrated Enterprise Solution.*
