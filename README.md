@@ -54,7 +54,7 @@ This is not just a standard ERP; it is a **Decision Support System** that levera
 ## 👤 Author
 **Your Name Here**
 - [LinkedIn Profile Link]
-- [Your Professional Email]
+- [abdalrahmanabotaleb362@gmail.com]
 
 ---
 *Developed with ❤️ as an AI-Integrated Enterprise Solution.*
